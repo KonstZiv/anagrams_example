@@ -87,5 +87,5 @@ select =
     C
 # Specify a list of mappings of files and the codes that should be ignored for the entirety of the
 # file.
-# per-file-ignores =
+per-file-ignores =
     __init__.py:F401,F403
