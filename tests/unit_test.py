@@ -25,7 +25,12 @@ class TestAnagram(unittest.TestCase):
                 self.assertEqual(tricky_invert_sentence(arg), result)
 
     def test_atypical(self):
-        pass
+        """
+        Test for atypical cases (wrong argument type).
+        """
+        for arg in self.atypical_cases:
+            with self.assertRaises(TypeError):
+                tricky_invert_sentence(arg)
 
 
 if __name__ == "__main__":

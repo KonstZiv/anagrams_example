@@ -31,6 +31,7 @@ def get_trcky_word_revers(word: str) -> str:
     >>> get_trcky_word_revers(b)
     '1fd 34 sasd '
     """
+
     # get list only for letters
     alpha_list = [symbol for symbol in word if symbol.isalpha()]
     # get reversed alpha_lisr
@@ -61,7 +62,23 @@ def tricky_invert_sentence(original_sentence: str) -> str:
     >>> tricky_invert_sentence(a)
     'fdsa 1v?cxzg56 1ew'
 
+
+    >>> b = 42
+    >>> tricky_invert_sentence(b)
+    Traceback (most recent call last):
+    TypeError: unsupported operand type for tricky_invert_sentence(): <class 'int'>
+
+    >>> c = [1, 2, 3]
+    >>> tricky_invert_sentence(c)
+    Traceback (most recent call last):
+    TypeError: unsupported operand type for tricky_invert_sentence(): <class 'list'>
     """
+    # Type checking for input data
+    if not isinstance(original_sentence, str):
+        raise TypeError(
+            f"unsupported operand type for tricky_invert_sentence(): {type(original_sentence)}"
+        )
+
     list_of_origin_words = get_words_list(original_sentence)
     list_of_inverted_words = [
         get_trcky_word_revers(word) for word in list_of_origin_words
